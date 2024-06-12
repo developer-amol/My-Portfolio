@@ -1,5 +1,20 @@
 
-// toggle icon navbar 
+// download Resume in next tab 
+document.getElementById('resume-button').addEventListener('click', function() {
+    var pdfUrl = '';  // Path to your PDF file
+
+    // Open PDF in a new tab
+    window.open(pdfUrl, '_blank');
+
+    // Create an invisible link element to trigger the download
+    var link = document.createElement('a');
+    link.href = pdfUrl;
+    link.download = 'Amol.pdf';  // Specify the file name
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+});
+
 
 // scroll sections 
 let sections = document.querySelectorAll('section');
